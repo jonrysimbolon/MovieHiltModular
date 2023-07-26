@@ -1,0 +1,15 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: '../shared_dependencies.gradle'
+android {
+    namespace 'com.jonrysimbolon.moviehiltmodular'
+    defaultConfig {
+        applicationId "com.jonrysimbolon.moviehiltmodular"
+    }
+    dynamicFeatures = [':feature_reviews', ':feature_trailers']
+}
+dependencies {
+    api project(":navigation")
+}

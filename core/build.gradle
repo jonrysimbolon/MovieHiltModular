@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+apply from: '../shared_dependencies.gradle'
+android {
+    namespace 'com.jonrysimbolon.core'
+    defaultConfig {
+        consumerProguardFiles "consumer-rules.pro"
+    }
+}
+
+dependencies {
+    api(libs.bundles.navigation)
+    api(libs.legacy.support.v4)
+    api(libs.core.ktx)
+    api(libs.appcompat.appcompat)
+    api(libs.material.material)
+    api(libs.bundles.lifecycle)
+    api(libs.constraint)
+    api(libs.recyclerview.recyclerview)
+    testApi(libs.junit.junit)
+    androidTestApi(libs.ext.junit)
+    androidTestApi(libs.espresso.core)
+    api(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
+    api(libs.dynamic.features.fragment)
+}
+kapt {
+    correctErrorTypes true
+}

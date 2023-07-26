@@ -1,0 +1,12 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: '../shared_dependencies.gradle'
+android {
+    namespace 'com.jonrysimbolon.navigation'
+}
+
+dependencies {
+    api project(":core")
+}
