@@ -1,13 +1,12 @@
 plugins {
     id 'com.android.dynamic-feature'
-    id 'org.jetbrains.kotlin.android'
 }
-apply from: '../shared_dependencies.gradle'
+//apply from: '../shared_dependencies.gradle'
 android {
+    compileSdk 34
     namespace 'com.jonrysimbolon.feature_trailers'
 }
 
 dependencies {
     api project(":app")
-    androidTestImplementation(libs.annotation.annotation)
 }

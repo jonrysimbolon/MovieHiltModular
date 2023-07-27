@@ -2,12 +2,11 @@ package com.jonrysimbolon.moviehiltmodular.fragment.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import com.jonrysimbolon.core.base.BaseFragment
+import com.jonrysimbolon.moviehiltmodular.R
+import com.jonrysimbolon.moviehiltmodular.databinding.FragmentHomeBinding
 import com.jonrysimbolon.moviehiltmodular.fragment.viewmodel.HomeViewModel
-import com.jonrysimbolon.navigation.R
-import com.jonrysimbolon.navigation.databinding.FragmentHomeBinding
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     override fun FragmentHomeBinding.initialize() {}
@@ -15,11 +14,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getViewModel().showToast(R.string.movies)
-        val toDetailDirection = HomeFragmentDirections
+        //val toDetailDirection = HomeFragmentDirections.actionHomeFragmentToDetailsFragment()
         binding.detail.setOnClickListener {
-            getViewModel().navigate(
-
-            )
+            findNavController().navigate(R.id.action_nav_home_to_nav_detail)
         }
     }
 }

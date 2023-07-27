@@ -10,4 +10,6 @@
         type specimen book"
     </string>
     <string name="title_navigation">Navigation</string>
+    <string name="movies">Movies</string>
+    <string name="detailmovie">Detail movie</string>
 </resources>

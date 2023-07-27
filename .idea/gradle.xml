@@ -16,7 +16,6 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/feature_reviews" />
             <option value="$PROJECT_DIR$/feature_trailers" />
-            <option value="$PROJECT_DIR$/navigation" />
           </set>
         </option>
       </GradleProjectSettings>

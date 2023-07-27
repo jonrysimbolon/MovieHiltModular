@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id "androidx.navigation.safeargs"
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
 }
@@ -27,6 +28,7 @@ dependencies {
     api(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
     api(libs.dynamic.features.fragment)
+    androidTestImplementation(libs.annotation.annotation)
 }
 kapt {
     correctErrorTypes true

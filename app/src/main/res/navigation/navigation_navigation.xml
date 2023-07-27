@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_nav_home_to_nav_detail"
             app:destination="@id/nav_detail" />
+        <!--<action
+            android:id="@+id/action_nav_home_to_nav_reviews"
+            app:destination="@id/nav_reviews"/>-->
     </fragment>
 
     <fragment
@@ -24,4 +27,7 @@
         android:id="@+id/nav_reviews"
         app:graphResName="reviews_navigation"
         app:moduleName="feature_reviews" />-->
+
+    <!--<include
+        app:graph="@navigation/reviews_navigation"/>-->
 </navigation>

@@ -11,5 +11,5 @@ android {
     dynamicFeatures = [':feature_reviews', ':feature_trailers']
 }
 dependencies {
-    api project(":navigation")
+    api project(":core")
 }

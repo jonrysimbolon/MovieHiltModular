@@ -4,6 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/container"
-    android:name="androidx.navigation.fragment.NavHostFragment"
+    android:name="androidx.navigation.dynamicfeatures.fragment.DynamicNavHostFragment"
     app:defaultNavHost="true"
-    app:navGraph="@navigation/core_navigation"/>
+    app:navGraph="@navigation/navigation_navigation"/>

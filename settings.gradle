@@ -13,8 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "MovieHiltModular"
-include ':app'
-include ':core'
-include ':feature_reviews'
-include ':feature_trailers'
-include ':navigation'
+include ':app', ':core', ':feature_reviews', ':feature_trailers'
