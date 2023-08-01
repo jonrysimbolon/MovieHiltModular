@@ -1,10 +1,7 @@
 package com.jonrysimbolon.feature_reviews
 
-import com.jonrysimbolon.core.base.BaseFragment
-import com.jonrysimbolon.feature_reviews.databinding.FragmentReviewsBinding
+import androidx.fragment.app.Fragment
 
-class ReviewsFragment : BaseFragment<FragmentReviewsBinding>(FragmentReviewsBinding::inflate) {
-    override fun FragmentReviewsBinding.initialize() {}
-    override fun getViewModel() = ReviewsViewModel()
+class ReviewsFragment : Fragment(R.layout.fragment_reviews) {
 
 }

@@ -1,8 +1,7 @@
 package com.jonrysimbolon.moviehiltmodular.fragment.viewmodel
 
 import com.jonrysimbolon.core.base.BaseViewModel
-import com.jonrysimbolon.moviehiltmodular.R
-import com.stockbit.common.utils.Event
+import com.jonrysimbolon.core.utils.Event
 
 class HomeViewModel : BaseViewModel() {
 
