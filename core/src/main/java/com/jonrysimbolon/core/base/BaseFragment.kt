@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
@@ -22,8 +21,7 @@ abstract class BaseFragment<T : ViewBinding, VM : BaseViewModel>(
     private var _binding: T? = null
     protected val binding get() = _binding!!
 
-    private val baseViewModelFactory by lazy { BaseViewModelFactory() }
-    protected lateinit var baseViewModel: VM
+    protected abstract val baseViewModel: VM
 
     abstract fun T.initialize()
 
@@ -34,7 +32,6 @@ abstract class BaseFragment<T : ViewBinding, VM : BaseViewModel>(
     ): View? {
         _binding = inflateMethod.invoke(inflater, container, false)
         binding.initialize()
-        baseViewModel = ViewModelProvider(this, baseViewModelFactory)[viewModelClass]
         return binding.root
     }
 
