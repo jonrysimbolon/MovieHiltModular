@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
 }
+//apply from: '../safeargs..gradle'
 apply from: '../shared_dependencies.gradle'
 android {
     namespace 'com.jonrysimbolon.core'
@@ -22,6 +23,7 @@ dependencies {
     api(libs.bundles.lifecycle)
     api(libs.constraint)
     api(libs.recyclerview.recyclerview)
+    api(libs.coil.kt)
     testApi(libs.junit.junit)
     androidTestApi(libs.ext.junit)
     androidTestApi(libs.espresso.core)
@@ -29,7 +31,4 @@ dependencies {
     kapt(libs.dagger.hilt.compiler)
     api(libs.dynamic.features.fragment)
     androidTestImplementation(libs.annotation.annotation)
-}
-kapt {
-    correctErrorTypes true
 }
