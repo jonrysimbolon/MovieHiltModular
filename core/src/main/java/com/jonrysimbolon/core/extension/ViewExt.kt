@@ -1,12 +1,10 @@
 package com.jonrysimbolon.core.extension
 
-import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
-import com.stockbit.common.utils.Event
+import com.jonrysimbolon.core.utils.Event
 
 /**
  * Transforms static java function Snackbar.make() to an extension function on View.
