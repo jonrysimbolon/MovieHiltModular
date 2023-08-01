@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MovieHiltModular"
         tools:targetApi="31">
         <activity
-            android:name=".activity.SplashScreenActivity"
+            android:name=".presentation.splash.PlashScreenActivity"
             android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"/>
+            android:name=".presentation.main.MainActivity"/>
     </application>
 
 </manifest>

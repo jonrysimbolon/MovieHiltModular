@@ -1,4 +1,4 @@
-package com.jonrysimbolon.moviehiltmodular.fragment.viewmodel
+package com.jonrysimbolon.moviehiltmodular.presentation.home
 
 import com.jonrysimbolon.core.base.BaseViewModel
 import com.jonrysimbolon.core.utils.Event
@@ -6,7 +6,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class DetailViewModel @Inject constructor() : BaseViewModel() {
+class HomeViewModel @Inject constructor() : BaseViewModel() {
+
     fun showToast(
         content: Int
     ){

@@ -1,4 +1,4 @@
-package com.jonrysimbolon.moviehiltmodular.fragment.ui
+package com.jonrysimbolon.moviehiltmodular.presentation.detail
 
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,6 @@ import androidx.fragment.app.viewModels
 import com.jonrysimbolon.core.base.BaseFragment
 import com.jonrysimbolon.moviehiltmodular.R
 import com.jonrysimbolon.moviehiltmodular.databinding.FragmentDetailBinding
-import com.jonrysimbolon.moviehiltmodular.fragment.viewmodel.DetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -12,4 +12,5 @@
     <string name="title_navigation">Navigation</string>
     <string name="movies">Movies</string>
     <string name="detailmovie">Detail movie</string>
+    <string name="movie_name">movie name</string>
 </resources>
