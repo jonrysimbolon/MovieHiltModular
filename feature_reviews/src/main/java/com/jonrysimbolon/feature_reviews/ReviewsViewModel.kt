@@ -1,7 +1,7 @@
 package com.jonrysimbolon.feature_reviews
 
-import com.jonrysimbolon.core.base.BaseViewModel
+import androidx.lifecycle.ViewModel
 
-class ReviewsViewModel : BaseViewModel() {
+class ReviewsViewModel : ViewModel() {
 
 }
