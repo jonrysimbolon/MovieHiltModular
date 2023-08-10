@@ -10,12 +10,14 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
+import com.jonrysimbolon.core.dialog.CustomDialog
+import com.jonrysimbolon.core.dialog.CustomDialogReload
 import com.jonrysimbolon.core.extension.setupSnackbar
 import com.jonrysimbolon.core.navigation.NavigationCommand
+import javax.inject.Inject
 
 abstract class BaseFragment<T : ViewBinding, VM : BaseViewModel>(
-    private val inflateMethod: (LayoutInflater, ViewGroup?, Boolean) -> T,
-    private val viewModelClass: Class<VM>
+    private val inflateMethod: (LayoutInflater, ViewGroup?, Boolean) -> T
 ) : Fragment() {
 
     private var _binding: T? = null
@@ -23,7 +25,19 @@ abstract class BaseFragment<T : ViewBinding, VM : BaseViewModel>(
 
     protected abstract val baseViewModel: VM
 
-    abstract fun T.initialize()
+    @Inject
+    lateinit var loadingDialog: CustomDialog
+
+    @Inject
+    lateinit var failureDialog: CustomDialogReload
+
+    /*protected val loadingDialog: CustomDialog by lazy {
+        Loading(requireContext())
+    }
+
+    protected val failureDialog: CustomDialogReload by lazy {
+        Failure(requireContext())
+    }*/
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +45,6 @@ abstract class BaseFragment<T : ViewBinding, VM : BaseViewModel>(
         savedInstanceState: Bundle?
     ): View? {
         _binding = inflateMethod.invoke(inflater, container, false)
-        binding.initialize()
         return binding.root
     }
 
@@ -40,10 +53,15 @@ abstract class BaseFragment<T : ViewBinding, VM : BaseViewModel>(
         _binding = null
     }
 
+    protected open fun setUpUi() = Unit
+    protected open fun setUpVm() = Unit
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeNavigation(baseViewModel)
         setupSnackbar(this, baseViewModel.snackBarError, Snackbar.LENGTH_LONG)
+        setUpUi()
+        setUpVm()
     }
 
     private fun observeNavigation(viewModel: BaseViewModel) {
