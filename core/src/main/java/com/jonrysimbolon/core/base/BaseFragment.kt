@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import androidx.transition.TransitionInflater
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.jonrysimbolon.core.dialog.CustomDialog
@@ -25,19 +26,18 @@ abstract class BaseFragment<T : ViewBinding, VM : BaseViewModel>(
 
     protected abstract val baseViewModel: VM
 
+    protected var fragmentExtras = FragmentNavigatorExtras()
+
     @Inject
     lateinit var loadingDialog: CustomDialog
 
     @Inject
     lateinit var failureDialog: CustomDialogReload
 
-    /*protected val loadingDialog: CustomDialog by lazy {
-        Loading(requireContext())
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition = TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
     }
-
-    protected val failureDialog: CustomDialogReload by lazy {
-        Failure(requireContext())
-    }*/
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -79,5 +79,5 @@ abstract class BaseFragment<T : ViewBinding, VM : BaseViewModel>(
         }
     }
 
-    open fun getExtras(): FragmentNavigator.Extras = FragmentNavigatorExtras()
+    private fun getExtras(): FragmentNavigator.Extras = fragmentExtras
 }
