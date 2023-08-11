@@ -9,8 +9,8 @@ import com.jonrysimbolon.core.utils.Event
 
 abstract class BaseViewModel: ViewModel() {
 
-    protected val _snackbarError = MutableLiveData<Event<Int>>()
-    val snackBarError: LiveData<Event<Int>> get() = _snackbarError
+    protected val _snackbarError = MutableLiveData<Event<String>>()
+    val snackBarError: LiveData<Event<String>> get() = _snackbarError
 
     private val _navigation = MutableLiveData<Event<NavigationCommand>>()
     val navigation: LiveData<Event<NavigationCommand>> = _navigation
