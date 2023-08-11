@@ -8,7 +8,7 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor() : BaseViewModel() {
     fun showToast(
-        content: Int
+        content: String
     ){
         _snackbarError.value = Event(content)
     }

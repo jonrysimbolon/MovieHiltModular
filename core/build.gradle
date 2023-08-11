@@ -2,7 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id "androidx.navigation.safeargs"
-    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp'
     id 'dagger.hilt.android.plugin'
 }
 //apply from: '../safeargs..gradle'
@@ -28,7 +28,17 @@ dependencies {
     androidTestApi(libs.ext.junit)
     androidTestApi(libs.espresso.core)
     api(libs.dagger.hilt.android)
-    kapt(libs.dagger.hilt.compiler)
+    //kapt(libs.dagger.hilt.compiler)
+    ksp "com.google.dagger:hilt-android-compiler:${libs.versions.hilt.asProvider().get()}"
     api(libs.dynamic.features.fragment)
+    api(libs.bundles.room)
+    //kasp(libs.room.compiler)
+    ksp "androidx.room:room-compiler:${libs.versions.room.get()}"
+    api(libs.bundles.retrofit)
+    api(libs.bundles.okhttp)
+    api(libs.paging.runtime)
+    coreLibraryDesugaring(libs.desugar.jdk)
+    api(libs.pierfrancescosoffritti.androidyoutubeplayer)
+
     androidTestImplementation(libs.annotation.annotation)
 }

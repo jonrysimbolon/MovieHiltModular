@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gr_st_co">#4FB0F1</color>
     <color name="gr_en_co">#70BCEF</color>
+    <color name="red">#ff5425</color>
 </resources>

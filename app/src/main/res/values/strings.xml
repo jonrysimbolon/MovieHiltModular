@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">MovieHiltModular</string>
     <string name="title_feature_reviews">Review</string>
     <string name="title_feature_trailers">Trailers</string>
@@ -13,4 +13,25 @@
     <string name="movies">Movies</string>
     <string name="detailmovie">Detail movie</string>
     <string name="movie_name">movie name</string>
+    <string name="video_name">Video name</string>
+    <string name="video_publish_at">Publish at</string>
+    <string name="author">author</string>
+    <string name="content">content</string>
+    <string name="splash_label">Splash</string>
+    <string name="reload">Reload</string>
+    <string name="desc_failed">Description failed</string>
+    <string name="retry" tools:ignore="PrivateResource">Retry</string>
+    <string name="category_label">Category</string>
+    <string name="movie_label">Movie</string>
+    <string name="detail_movie">Detail movie</string>
+    <string name="category_name_item">Category name</string>
+    <string name="release_date">0000–00–00</string>
+    <string name="run_time">Run time</string>
+    <string name="run_time_value">%1$s minutes</string>
+    <string name="tag_line">Tag line</string>
+    <string name="over_view">Overview</string>
+    <string name="trailer_label">Trailer</string>
+    <string name="review_label">Review</string>
+    <string name="createAt">Create. </string>
+    <string name="updateAt">Update. </string>
 </resources>

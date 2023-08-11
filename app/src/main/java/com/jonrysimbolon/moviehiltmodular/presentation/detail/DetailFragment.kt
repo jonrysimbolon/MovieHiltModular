@@ -1,29 +1,32 @@
 package com.jonrysimbolon.moviehiltmodular.presentation.detail
 
-import android.os.Bundle
-import android.view.View
 import androidx.fragment.app.viewModels
 import com.jonrysimbolon.core.base.BaseFragment
-import com.jonrysimbolon.moviehiltmodular.R
 import com.jonrysimbolon.moviehiltmodular.databinding.FragmentDetailBinding
+import com.jonrysimbolon.moviehiltmodular.utils.Constant
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>(
     FragmentDetailBinding::inflate,
-    viewModelClass = DetailViewModel::class.java
 ) {
-    override fun FragmentDetailBinding.initialize() {}
+
     override val baseViewModel: DetailViewModel by viewModels()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        baseViewModel.showToast(R.string.detailmovie)
+    override fun setUpUi() {
+        super.setUpUi()
 
-        val toReviewsDirection = DetailFragmentDirections.actionNavDetailToNavReviews()
+        val movieId = arguments?.getString(Constant.MOVIE_ID)
+        val movieTitle = arguments?.getString(Constant.MOVIE_TITLE)
 
-        binding.reviews.setOnClickListener {
-            baseViewModel.navigate(toReviewsDirection)
+        binding.apply {
+            posterIv.transitionName = movieId
+            requireActivity().title = movieTitle
         }
+    }
+
+    override fun setUpVm() {
+        super.setUpVm()
+
     }
 }

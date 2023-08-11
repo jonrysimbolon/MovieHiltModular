@@ -6,6 +6,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "Authorization", bearerApiKey)
+        buildConfigField("String", "Base_Url", urlApi)
     }
 
     buildTypes {
@@ -20,8 +22,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '17'
+        freeCompilerArgs += ["-opt-in=kotlin.RequiresOptIn"]
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 }

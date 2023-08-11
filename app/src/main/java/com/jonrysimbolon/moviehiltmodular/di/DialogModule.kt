@@ -9,7 +9,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.scopes.ActivityScoped
 
 
@@ -20,12 +20,12 @@ object DialogModule{
     @ActivityScoped
     @Provides
     fun provideLoadingDialog(
-        @ApplicationContext context: Context
+        @ActivityContext context: Context
     ): CustomDialog = Loading(context)
 
     @ActivityScoped
     @Provides
     fun provideFailureDialog(
-        @ApplicationContext context: Context
+        @ActivityContext context: Context
     ): CustomDialogReload = Failure(context)
 }
