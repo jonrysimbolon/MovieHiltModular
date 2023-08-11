@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id "androidx.navigation.safeargs"
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 //apply from: '../safeargs.gradle'
 apply from: '../shared_dependencies.gradle'
@@ -14,4 +16,6 @@ android {
 }
 dependencies {
     api project(":core")
+    api(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
 }
