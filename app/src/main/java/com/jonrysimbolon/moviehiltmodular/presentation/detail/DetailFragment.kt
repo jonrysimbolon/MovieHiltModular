@@ -21,7 +21,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>(
 
         binding.apply {
             posterIv.transitionName = movieId
-            requireActivity().title = movieTitle
+            //requireActivity().title = movieTitle
         }
     }
 

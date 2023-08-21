@@ -1,105 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jonrysimbolon.moviehiltmodular.presentation.detail.DetailFragment"
-    android:id="@+id/nsV">
+    android:id="@+id/coordinatorLayout">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/app_bar_height"
+        android:theme="@style/Theme.AppBarOverlay">
 
-        <ImageView
-            android:id="@+id/backgroundIv"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_300dp"
-            android:contentDescription="@null"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
 
-        <ImageView
-            android:id="@+id/posterIv"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_200dp"
-            android:contentDescription="@null"
-            android:scaleType="centerInside"
-            android:src="@drawable/cinema"
-            app:layout_constraintBottom_toBottomOf="@id/backgroundIv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/backgroundIv" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"
+                app:layout_collapseMode="parallax" />
 
-        <ImageView
-            android:contentDescription="@null"
-            android:id="@+id/userReviewIv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_reviews"
-            app:layout_constraintBottom_toBottomOf="@id/posterIv"
-            app:layout_constraintEnd_toStartOf="@id/posterIv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/backgroundIv" />
+            <com.google.android.material.appbar.MaterialToolbar
+                app:title="@string/detail_movie"
+                android:id="@+id/backBtn"
+                app:navigationIcon="@drawable/ic_back"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/Theme.PopupOverlay" />
 
-        <ImageView
-            android:contentDescription="@null"
-            android:id="@+id/trailerIv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_trailer"
-            app:layout_constraintBottom_toBottomOf="@id/posterIv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/posterIv"
-            app:layout_constraintTop_toBottomOf="@id/backgroundIv" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:layout_collapseMode="parallax"
+                app:menu="@menu/detail_menu"
+                app:title="@string/app_name" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/releaseDateTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_16dp"
-            android:text="@string/release_date"
-            android:drawablePadding="@dimen/_8dp"
-            app:drawableStartCompat="@drawable/ic_calendar"
-            app:layout_constraintTop_toBottomOf="@id/posterIv" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/runTimeTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_2dp"
-            android:text="@string/run_time"
-            android:drawablePadding="@dimen/_8dp"
-            app:drawableStartCompat="@drawable/ic_time"
-            app:layout_constraintTop_toBottomOf="@id/releaseDateTv" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/taglineTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_2dp"
-            android:text="@string/tag_line"
-            android:drawablePadding="@dimen/_8dp"
-            app:drawableStartCompat="@drawable/ic_tagline"
-            app:layout_constraintTop_toBottomOf="@id/runTimeTv" />
+    <include layout="@layout/detail_content_scrolling" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/overViewTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_8dp"
-            android:text="@string/over_view"
-            android:drawablePadding="@dimen/_8dp"
-            app:drawableStartCompat="@drawable/ic_overview"
-            app:layout_constraintTop_toBottomOf="@id/taglineTv" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/posterIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16dp"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|start"
+        app:srcCompat="@drawable/cinema"
+        android:importantForAccessibility="no" />
 
-
-</androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -14,4 +14,8 @@
         <item name="colorAccent">@color/gr_en_co</item>
         <item name="android:statusBarColor">@color/gr_st_co</item>
     </style>
+
+    <style name="Theme.AppBarOverlay" parent="ThemeOverlay.Material3.Dark.ActionBar" />
+    <style name="Theme.PopupOverlay" parent="ThemeOverlay.Material3.Light" />
+
 </resources>
