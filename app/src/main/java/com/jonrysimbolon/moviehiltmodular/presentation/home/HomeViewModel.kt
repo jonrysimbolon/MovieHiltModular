@@ -4,10 +4,9 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.jonrysimbolon.core.base.BaseViewModel
-import com.jonrysimbolon.core.domain.MovieUseCase
+import com.jonrysimbolon.core.domain.movie.MovieUseCase
 import com.jonrysimbolon.core.model.CategoryModel
 import com.jonrysimbolon.core.model.MovieModel
-import com.jonrysimbolon.core.utils.Event
 import com.jonrysimbolon.core.utils.MovieDispatcher
 import com.jonrysimbolon.core.utils.MovieDispatchers
 import com.jonrysimbolon.core.utils.ResultStatus
@@ -75,11 +74,5 @@ class HomeViewModel @Inject constructor(
                     _movieFlowPagingData.value = data
                 }
         }
-    }
-
-    fun showToast(
-        content: String
-    ) {
-        _snackbarError.value = Event(content)
     }
 }
