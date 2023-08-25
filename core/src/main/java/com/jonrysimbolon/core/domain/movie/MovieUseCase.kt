@@ -1,4 +1,4 @@
-package com.jonrysimbolon.core.domain
+package com.jonrysimbolon.core.domain.movie
 
 import androidx.paging.PagingData
 import com.jonrysimbolon.core.model.CategoryModel

@@ -1,4 +1,4 @@
-package com.jonrysimbolon.core.domain
+package com.jonrysimbolon.core.domain.movie
 
 import androidx.paging.PagingData
 import com.jonrysimbolon.core.model.CategoryModel
@@ -13,7 +13,7 @@ import javax.inject.Singleton
 class MovieUseCaseImpl @Inject constructor(
     private val categoryRepository: CategoryRepository,
     private val movieRepository: MovieRepository
-) : MovieUseCase{
+) : MovieUseCase {
     override suspend fun getCategories(): Flow<List<CategoryModel>> =
         categoryRepository.getAll()
 
