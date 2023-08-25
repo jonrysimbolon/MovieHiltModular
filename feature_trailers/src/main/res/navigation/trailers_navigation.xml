@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/nav_trailers">
+
+    <fragment
+        android:id="@+id/nav_trailers"
+        android:name="com.jonrysimbolon.feature_trailers.TrailersFragment"
+        android:label="fragment_trailers"
+        tools:layout="@layout/fragment_trailers" />
+</navigation>

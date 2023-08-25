@@ -1,7 +1,9 @@
 package com.jonrysimbolon.moviehiltmodular.di
 
-import com.jonrysimbolon.core.domain.MovieUseCase
-import com.jonrysimbolon.core.domain.MovieUseCaseImpl
+import com.jonrysimbolon.core.domain.detail.DetailMovieUseCase
+import com.jonrysimbolon.core.domain.detail.DetailMovieUseCaseImpl
+import com.jonrysimbolon.core.domain.movie.MovieUseCase
+import com.jonrysimbolon.core.domain.movie.MovieUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -17,4 +19,10 @@ abstract class UseCaseModule {
     abstract fun bindMovieUseCase(
         impl: MovieUseCaseImpl
     ): MovieUseCase
+
+    @Singleton
+    @Binds
+    abstract fun bindDetailMovieUseCase(
+        impl: DetailMovieUseCaseImpl
+    ): DetailMovieUseCase
 }

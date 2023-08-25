@@ -148,19 +148,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
 
     private fun onClickItem(viewHolder: MovieAdapter.ViewHolder, model: MovieModel) {
         val idMovie = model.id
-            .toString()
+        val idMovieStr = model.id.toString()
         val titleMovie = model.title
 
         val ivItemPhoto = viewHolder
             .binding
             .ivItemPhoto
 
-        ivItemPhoto.transitionName = idMovie
+        ivItemPhoto.transitionName = idMovieStr
 
         val bundle = Bundle()
 
         bundle.apply {
-            putString(Constant.MOVIE_ID, idMovie)
+            putInt(Constant.MOVIE_ID, idMovie)
             putString(Constant.MOVIE_TITLE, titleMovie)
         }
 
@@ -170,7 +170,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
         )
 
         fragmentExtras = FragmentNavigatorExtras(
-            ivItemPhoto to idMovie
+            ivItemPhoto to idMovieStr
         )
 
         baseViewModel.navigate(homeToDetailNavDirection)

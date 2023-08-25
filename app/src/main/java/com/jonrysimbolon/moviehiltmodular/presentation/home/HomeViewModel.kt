@@ -43,6 +43,7 @@ class HomeViewModel @Inject constructor(
     private fun fetchCategories() {
         viewModelScope.launch {
             movieUseCase.getCategories()
+                .flowOn(ioDispatcher)
                 .map { listCategories ->
                     val idFirst = listCategories
                         .first()

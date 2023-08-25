@@ -9,6 +9,7 @@ import com.jonrysimbolon.core.model.MovieModel
 import com.jonrysimbolon.core.utils.setImageUrl
 import com.jonrysimbolon.moviehiltmodular.R
 import com.jonrysimbolon.moviehiltmodular.databinding.ItemMovieBinding
+import com.jonrysimbolon.moviehiltmodular.utils.setImageUrlDefault
 import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 
@@ -31,11 +32,9 @@ class MovieAdapter @Inject constructor(
         if (item != null)
             holder.bind(item)
 
-        setImageUrl(
+        setImageUrlDefault(
             item?.posterPath.toString(),
-            holder.binding.ivItemPhoto,
-            errorImage = R.drawable.notfound,
-            placeHolderImage = R.drawable.cinema
+            holder.binding.ivItemPhoto
         )
 
         holder.itemView.setOnClickListener {

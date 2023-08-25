@@ -2,6 +2,8 @@ package com.jonrysimbolon.moviehiltmodular.di
 
 import com.jonrysimbolon.core.repository.category.CategoryRepository
 import com.jonrysimbolon.core.repository.category.CategoryRepositoryImpl
+import com.jonrysimbolon.core.repository.detailmovie.DetailMovieRepository
+import com.jonrysimbolon.core.repository.detailmovie.DetailMovieRepositoryImpl
 import com.jonrysimbolon.core.repository.movie.MovieRepository
 import com.jonrysimbolon.core.repository.movie.MovieRepositoryImpl
 import dagger.Binds
@@ -26,5 +28,11 @@ abstract class RepositoryModule{
     abstract fun movieCategoryRepo(
         impl: MovieRepositoryImpl
     ): MovieRepository
+
+    @Singleton
+    @Binds
+    abstract fun detailMovieRepo(
+        impl: DetailMovieRepositoryImpl
+    ): DetailMovieRepository
 
 }

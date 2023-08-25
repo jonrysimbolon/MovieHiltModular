@@ -25,11 +25,19 @@
         <action
             android:id="@+id/action_nav_detail_to_nav_reviews"
             app:destination="@id/nav_reviews" />
+        <action
+            android:id="@+id/action_nav_detail_to_nav_trailers"
+            app:destination="@id/nav_trailers" />
     </fragment>
 
     <include-dynamic
         android:id="@+id/nav_reviews"
         app:graphResName="reviews_navigation"
         app:moduleName="feature_reviews" />
+
+    <include-dynamic
+        android:id="@+id/nav_trailers"
+        app:graphResName="trailer_navigation"
+        app:moduleName="feature_trailers" />
 
 </navigation>
