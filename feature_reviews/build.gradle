@@ -9,4 +9,9 @@ android {
 
 dependencies {
     api project(":app")
+
+    testImplementation(libs.junit.junit)
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.annotation.annotation)
 }

@@ -17,14 +17,18 @@ import com.jonrysimbolon.core.extension.setupSnackbar
 import com.jonrysimbolon.core.navigation.NavigationCommand
 import javax.inject.Inject
 
+typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
+
 abstract class BaseFragment<T : ViewBinding, VM : BaseViewModel>(
-    private val inflateMethod: (LayoutInflater, ViewGroup?, Boolean) -> T
+    private val inflateMethod: Inflate<T>
 ) : Fragment() {
 
     private var _binding: T? = null
     protected val binding get() = _binding!!
 
-    protected abstract val baseViewModel: VM
+    protected abstract val baseViewModel: VM // seharusnya pake viewmodel dari hilt
+    // impl kyk gini gk masuk akal
+    // bagaimana membuat object, tanpa factory ?
 
     protected var fragmentExtras = FragmentNavigatorExtras()
 

@@ -26,6 +26,10 @@ class HomeViewModel @Inject constructor(
     @MovieDispatcher(MovieDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
 ) : BaseViewModel() {
 
+    /**
+     * Can make those 3 variable to one custom data state
+     */
+
     private val _idCategoryFlow = MutableStateFlow("0")
     val idCategoryFlow: StateFlow<String> get() = _idCategoryFlow
 

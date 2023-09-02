@@ -24,21 +24,21 @@ dependencies {
     api(libs.constraint)
     api(libs.recyclerview.recyclerview)
     api(libs.coil.kt)
-    testApi(libs.junit.junit)
-    androidTestApi(libs.ext.junit)
-    androidTestApi(libs.espresso.core)
     api(libs.dagger.hilt.android)
     //kapt(libs.dagger.hilt.compiler)
     ksp "com.google.dagger:hilt-android-compiler:${libs.versions.hilt.asProvider().get()}"
     api(libs.dynamic.features.fragment)
     api(libs.bundles.room)
-    //kasp(libs.room.compiler)
-    ksp "androidx.room:room-compiler:${libs.versions.room.get()}"
+    ksp(libs.room.compiler)
+    //ksp "androidx.room:room-compiler:${libs.versions.room.get()}"
     api(libs.bundles.retrofit)
     api(libs.bundles.okhttp)
     api(libs.paging.runtime)
     coreLibraryDesugaring(libs.desugar.jdk)
     api(libs.pierfrancescosoffritti.androidyoutubeplayer)
 
+    testImplementation(libs.junit.junit)
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.annotation.annotation)
 }

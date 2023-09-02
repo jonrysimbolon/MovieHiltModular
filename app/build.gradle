@@ -18,4 +18,9 @@ dependencies {
     api project(":core")
     api(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
+
+    testImplementation(libs.junit.junit)
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.annotation.annotation)
 }
