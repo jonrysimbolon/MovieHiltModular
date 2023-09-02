@@ -26,9 +26,7 @@ abstract class BaseFragment<T : ViewBinding, VM : BaseViewModel>(
     private var _binding: T? = null
     protected val binding get() = _binding!!
 
-    protected abstract val baseViewModel: VM // seharusnya pake viewmodel dari hilt
-    // impl kyk gini gk masuk akal
-    // bagaimana membuat object, tanpa factory ?
+    protected abstract val baseViewModel: VM
 
     protected var fragmentExtras = FragmentNavigatorExtras()
 
